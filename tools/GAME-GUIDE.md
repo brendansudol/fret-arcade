@@ -137,6 +137,33 @@ when one is refused, that part stays off and every game still works alone.
   `?mock=bob` in another (see `tools/mock-claude.js` for `&viewer`, `&owner`,
   `&lag=150`). `node tools/online-check.mjs` runs the whole thing headless.
 
+## Publishing
+
+There are two live copies, and they update in different ways.
+
+- **GitHub Pages** serves the repository as it is (branch `main`, root folder),
+  so a push updates it within a minute. Nothing is built. `index.html` only
+  loads `tools/mock-claude.js` on localhost.
+- **The claude.ai copy** is the one-file bundle: run `node tools/build.mjs`
+  and publish `dist/fret-arcade.html` to the same page as before, so its link
+  and its saved scores are kept. The page declares these abilities, which carry
+  forward when a publish leaves them out:
+
+  ```json
+  {
+    "db": { "rules": [
+      { "path": "players", "read": "view", "write": "owner" },
+      { "path": "players/{self}", "write": "interact" }
+    ] },
+    "user": { "scopes": ["profile"] },
+    "room": {}
+  }
+  ```
+
+  One document per player lives at `players/<their id>`. Everyone admitted can
+  read them; each person writes only their own; the owner can write any, which
+  is how the owner's page saves scores for people with view-only access.
+
 ## Checking your work
 
 The dev server is **already running on port 4747. Do not start another.**

@@ -1,0 +1,16 @@
+{
+  "name": "fret-arcade-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Development tools for Fret Arcade: local server, screenshots, checks, bundling.",
+  "type": "module",
+  "scripts": {
+    "serve": "node serve.mjs",
+    "build": "node build.mjs",
+    "check": "node online-check.mjs"
+  },
+  "dependencies": {
+    "esbuild": "^0.28.2",
+    "puppeteer-core": "^25.17.0"
+  }
+}

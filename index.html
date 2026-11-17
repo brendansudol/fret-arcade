@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fret Arcade</title>
+<meta name="description" content="Seven small games for learning the guitar fretboard.">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Fret Arcade">
+<meta name="theme-color" content="#e2e9dd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111817" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&family=Doto:wght@700;900&display=swap">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="viewport"><div id="fit"><main id="stage"></main></div></div>
+<!-- On this computer only: a stand-in for the claude.ai page runtime, switched on by ?mock=name (see the file). -->
+<script>if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) document.write('<script src="tools/mock-claude.js"><\/script>');</script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
